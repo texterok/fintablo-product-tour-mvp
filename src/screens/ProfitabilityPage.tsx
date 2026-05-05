@@ -149,16 +149,17 @@ function BridgeBlock() {
     <div className="space-y-3 rounded-md border border-slate-200 bg-white p-5">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-slate-900">
-          Margin bridge: 89% → 74%
+          Куда уходит прибыль: с 16,16 млн до 12,03 млн
         </h2>
         <span className="rounded bg-blue-50 px-2 py-1 text-[11px] font-medium text-blue-700">
-          Августовские итоги по 7 сделкам
+          Август, 7 сделок
         </span>
       </div>
       <p className="text-sm text-slate-600">
-        Между маржинальным доходом и валовой прибылью —{" "}
-        <span className="font-semibold text-slate-900">2 403 170 ₽</span>. Финтабло
-        раскладывает разницу на 5 шагов.
+        Слева — выручка по сделкам. Справа — реальная прибыль до налогов. По
+        дороге «теряются»{" "}
+        <span className="font-semibold text-slate-900">2 403 170 ₽</span> —
+        ниже видно, на что именно.
       </p>
       <Waterfall />
     </div>
@@ -315,7 +316,7 @@ function DrillDown() {
     <div className="rounded-md border border-slate-200 bg-white">
       <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-5 py-3">
         <p className="text-sm font-semibold text-slate-900">
-          Прочие расходы по сделкам — расшифровка
+          На что ушли 2,4 млн ₽ за месяц
         </p>
         <div className="flex items-center gap-2">
           <ProvenanceTag provenance="REAL" source={drillDownTotal.source} />
@@ -325,10 +326,10 @@ function DrillDown() {
         </div>
       </div>
       <div className="border-l-4 border-amber-400 bg-amber-50 px-5 py-3 text-[13px] text-amber-900">
-        <span className="font-semibold">Расшифровка категорий смоделирована.</span>{" "}
-        Итог 2 403 170 ₽ — реальный (REAL). Разбивка по категориям —
-        иллюстративная (SIMULATED): какие именно расходы по сделкам обычно
-        встречаются у строительных компаний.
+        <span className="font-semibold">Это пример.</span>{" "}
+        Сумма 2 403 170 ₽ — реальная цифра из дашборда. Категории ниже —
+        примеры того, на что обычно уходят такие деньги у строительных
+        компаний. На ваших данных категории будут точнее.
       </div>
       <ul className="divide-y divide-slate-100">
         {drillDownCandidates.map((cat) => {
@@ -357,8 +358,9 @@ function DrillDown() {
                     {cat.example}
                   </p>
                   <p className="mt-1 text-xs text-slate-500">
-                    В реальном Финтабло строка кликабельна до конкретной операции
-                    в банке. Trace-механика — на следующем шаге разбора.
+                    В Финтабло можно нажать на строку и увидеть конкретный
+                    платёж в банке — кому, когда, по какой сделке. Покажем
+                    на следующем шаге.
                   </p>
                 </div>
               )}

@@ -86,13 +86,13 @@ export function OperationPage() {
 
       <div className="rounded-md border-2 border-blue-200 bg-blue-50/40 p-5">
         <p className="text-sm font-semibold text-blue-900">
-          Подсвечена операция в адрес ИП Васильев Иван Николаевич — пример trace-до-банка
+          Вот этот платёж в банке — 110 000 ₽ за аренду
         </p>
         <p className="mt-1 text-sm text-slate-700">
-          Любую цифру отчёта в Финтабло — итог P&L, статью расходов, сегмент
-          margin bridge — можно открыть до конкретной строки в выписке. Эта
-          операция показана как иллюстрация механики (не как пример внутри 2,4
-          млн расходов по сделкам).
+          В Финтабло любую цифру в отчёте — прибыль, расход, остаток на
+          счёте — можно открыть до конкретного перевода. Видно дату, кому
+          ушло, со счёта какой компании. Это пример того, как работает связь
+          «отчёт → банк».
         </p>
         <div className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
           <Field label="Дата" value={bankOperationExample.date.value} source={bankOperationExample.date.source} />
@@ -107,15 +107,15 @@ export function OperationPage() {
 
       <div id="anchor-cta" className="rounded-md border border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-6">
         <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
-          Готовы попробовать на своих данных?
+          Хотите так же на своих данных?
         </p>
         <h2 className="mt-1 text-xl font-semibold text-slate-900">
-          Загрузите выписку — увидим margin bridge ваших сделок
+          Покажем, где утекает прибыль вашего бизнеса
         </h2>
         <p className="mt-2 text-sm text-slate-700">
-          14-дневный триал, без привязки карты. Загружаете выписку 1С или банка
-          — Финтабло считает марж. доход → валовую → операционную и трассирует
-          каждую цифру до операции.
+          Загрузите выписку из 1С или банка — Финтабло разложит ваши сделки и
+          покажет, на что уходят деньги между выручкой и итоговой прибылью. 14
+          дней бесплатно, без карты и без обязательств.
         </p>
         <button
           type="button"
@@ -125,7 +125,7 @@ export function OperationPage() {
           }}
           className="mt-4 rounded bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700"
         >
-          Открыть триал →
+          Попробовать бесплатно →
         </button>
       </div>
 
@@ -170,7 +170,7 @@ function CtaModal({ onClose }: { onClose: () => void }) {
       <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-xl">
         <div className="flex items-start justify-between">
           <h3 className="text-lg font-semibold text-slate-900">
-            Открыть триал Финтабло
+            Попробовать на своих данных
           </h3>
           <button
             type="button"
@@ -202,8 +202,7 @@ function CtaModal({ onClose }: { onClose: () => void }) {
               Получить ссылку
             </button>
             <p className="text-[11px] text-slate-500">
-              Это интерактивный разбор концепта. Реальная регистрация — на
-              fintablo.ru.
+              Это демо-разбор. Настоящая регистрация — на fintablo.ru.
             </p>
           </form>
         ) : (
