@@ -76,8 +76,8 @@ export function DealsPage() {
         <Metric
           label="Сумма сделок"
           value="17 175 000"
-          suffix="за период"
-          hint="Сумма всех сделок за период с учётом фильтров, сумма с НДС"
+          suffix="активные сделки"
+          hint="Общая сумма всех активных сделок с НДС"
         />
         <Metric
           label="Получено оплат"
@@ -96,8 +96,8 @@ export function DealsPage() {
         <Metric
           label="Сумма выручки"
           value="16 165 000"
-          suffix="включая НДС"
-          hint="Возможная выручка по сделкам — сумма без НДС"
+          suffix="без НДС"
+          hint="Возможная выручка по активным сделкам, сумма без НДС"
         />
         <Metric
           id="anchor-deals-margin"

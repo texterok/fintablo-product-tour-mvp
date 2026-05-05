@@ -89,6 +89,9 @@ function Tab2({
 function ProfitabilityTable() {
   return (
     <div className="overflow-x-auto rounded-md border border-slate-200 bg-white">
+      <div className="border-b border-slate-200 bg-slate-50 px-3 py-2 text-[11px] font-medium text-slate-600">
+        Фрагмент: 2 сделки из 7 (для иллюстрации структуры таблицы)
+      </div>
       <table className="w-full min-w-[900px] text-sm">
         <thead className="border-b border-slate-200 bg-slate-50 text-[11px] uppercase tracking-wide text-slate-500">
           <tr>
@@ -130,13 +133,13 @@ function ProfitabilityTable() {
             <td className="px-3 py-2 text-right tabular-nums">4 586</td>
           </tr>
           <tr className="bg-slate-50 font-semibold">
-            <td className="px-3 py-2">Итого</td>
+            <td className="px-3 py-2">Итого по фрагменту</td>
             <td className="px-3 py-2 text-right tabular-nums">1 575 000</td>
             <td className="px-3 py-2 text-right tabular-nums">1 575 000</td>
             <td className="px-3 py-2 text-right tabular-nums">218 750</td>
             <td className="px-3 py-2 text-right tabular-nums">1 356 250</td>
             <td className="px-3 py-2 text-right tabular-nums text-emerald-600">86,11%</td>
-            <td className="px-3 py-2 text-right tabular-nums">4 586</td>
+            <td className="px-3 py-2 text-right tabular-nums">9 172</td>
           </tr>
         </tbody>
       </table>
@@ -149,17 +152,20 @@ function BridgeBlock() {
     <div className="space-y-3 rounded-md border border-slate-200 bg-white p-5">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-slate-900">
-          Куда уходит прибыль: с 16,16 млн до 12,03 млн
+          Как 16,16 млн ₽ превращаются в 12,03 млн ₽ прибыли
         </h2>
         <span className="rounded bg-blue-50 px-2 py-1 text-[11px] font-medium text-blue-700">
-          Август, 7 сделок
+          Все 7 активных сделок
         </span>
       </div>
       <p className="text-sm text-slate-600">
-        Слева — выручка по сделкам. Справа — реальная прибыль до налогов. По
-        дороге «теряются»{" "}
-        <span className="font-semibold text-slate-900">2 403 170 ₽</span> —
-        ниже видно, на что именно.
+        По дороге уходит{" "}
+        <span className="font-semibold text-slate-900">4,14 млн ₽</span>: первый
+        кусок —{" "}
+        <span className="font-semibold text-slate-900">1,74 млн ₽</span> прямых
+        расходов (материалы и сдельная зарплата), второй —{" "}
+        <span className="font-semibold text-slate-900">2,40 млн ₽</span> прочих
+        расходов по сделкам. Второй разберём ниже.
       </p>
       <Waterfall />
     </div>
@@ -316,7 +322,7 @@ function DrillDown() {
     <div className="rounded-md border border-slate-200 bg-white">
       <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-5 py-3">
         <p className="text-sm font-semibold text-slate-900">
-          На что ушли 2,4 млн ₽ за месяц
+          Пример раскладки 2,4 млн ₽ по категориям
         </p>
         <div className="flex items-center gap-2">
           <ProvenanceTag provenance="REAL" source={drillDownTotal.source} />
@@ -326,10 +332,11 @@ function DrillDown() {
         </div>
       </div>
       <div className="border-l-4 border-amber-400 bg-amber-50 px-5 py-3 text-[13px] text-amber-900">
-        <span className="font-semibold">Это пример.</span>{" "}
-        Сумма 2 403 170 ₽ — реальная цифра из дашборда. Категории ниже —
-        примеры того, на что обычно уходят такие деньги у строительных
-        компаний. На ваших данных категории будут точнее.
+        <span className="font-semibold">Категории и суммы — иллюстрация, не данные этой компании.</span>{" "}
+        2 403 170 ₽ — реальная разница из дашборда сделок. Разбивка ниже
+        показывает, на что обычно уходят такие деньги у строительных
+        компаний. На ваших данных Финтабло покажет реальные категории и
+        конкретные платежи.
       </div>
       <ul className="divide-y divide-slate-100">
         {drillDownCandidates.map((cat) => {

@@ -72,7 +72,7 @@ export function OpiuPage() {
           type="button"
           className="flex h-9 items-center gap-2 rounded border border-slate-300 bg-white px-3 text-sm text-slate-800"
         >
-          ‹ Январь – Август 2024 ›
+          ‹ Январь – Июль 2024 ›
         </button>
         <button
           type="button"
