@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  /* Surfaces */
+  --ft-bg: #F1F2F7;
+  --ft-surface: #FFFFFF;
+  --ft-surface-muted: #F5F7FF;
+
+  /* Borders */
+  --ft-border: #DADDE7;
+  --ft-border-muted: #2525250A;
+  --ft-border-strong: #CFCFCF;
+
+  /* Text */
+  --ft-text: #333333;
+  --ft-text-muted: #787C80;
+  --ft-text-on-nav: #273971;
+
+  /* Brand */
+  --ft-primary: #5A76C9;
+  --ft-primary-hover: #3E559A;
+  --ft-primary-active: #1B4CC9;
+  --ft-primary-soft: #B6C7F9;
+  --ft-primary-softer: #D4DFFF;
+  --ft-primary-text: #313F68;
+
+  /* Semantic */
+  --ft-success: #19AA19;
+  --ft-success-bg: #E9FFE9;
+  --ft-success-text: #08611C;
+  --ft-warning: #F98F2E;
+  --ft-warning-bg: #FFF0E2;
+  --ft-danger: #FF6158;
+  --ft-danger-bg: #FFEFEE;
+  --ft-danger-text: #AD3737;
+}
+
+@theme inline {
+  --color-ft-bg: var(--ft-bg);
+  --color-ft-surface: var(--ft-surface);
+  --color-ft-surface-muted: var(--ft-surface-muted);
+  --color-ft-border: var(--ft-border);
+  --color-ft-border-muted: var(--ft-border-muted);
+  --color-ft-text: var(--ft-text);
+  --color-ft-text-muted: var(--ft-text-muted);
+  --color-ft-text-on-nav: var(--ft-text-on-nav);
+  --color-ft-primary: var(--ft-primary);
+  --color-ft-primary-hover: var(--ft-primary-hover);
+  --color-ft-primary-soft: var(--ft-primary-soft);
+  --color-ft-primary-softer: var(--ft-primary-softer);
+  --color-ft-primary-text: var(--ft-primary-text);
+  --color-ft-success: var(--ft-success);
+  --color-ft-success-bg: var(--ft-success-bg);
+  --color-ft-success-text: var(--ft-success-text);
+  --color-ft-warning: var(--ft-warning);
+  --color-ft-warning-bg: var(--ft-warning-bg);
+  --color-ft-danger: var(--ft-danger);
+  --color-ft-danger-bg: var(--ft-danger-bg);
+  --color-ft-danger-text: var(--ft-danger-text);
+  --font-sans: var(--font-source-sans-pro), system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  font-family: var(--font-source-sans-pro), system-ui, -apple-system, sans-serif;
+  background: var(--ft-bg);
+  color: var(--ft-text);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 280ms ease-out both; }
