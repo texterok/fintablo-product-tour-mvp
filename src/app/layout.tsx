@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { PosthogScript } from "@/components/PosthogScript";
 import "./globals.css";
 
 const sourceSansPro = localFont({
@@ -37,7 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className={`${sourceSansPro.variable} h-full antialiased`}>
-      <body className="min-h-full bg-ft-bg text-ft-text">{children}</body>
+      <body className="min-h-full bg-ft-bg text-ft-text">
+        <PosthogScript />
+        {children}
+      </body>
     </html>
   );
 }
