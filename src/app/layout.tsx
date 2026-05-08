@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   title: "Финтабло — куда утекает прибыль строительной компании",
   description:
     "За 2 минуты покажем на реальных данных, где из 16 миллионов выручки до прибыли доходит только 12. И на что уходят остальные 4 миллиона.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function RootLayout({

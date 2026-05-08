@@ -1,4 +1,10 @@
-export function TopBar() {
+export function TopBar({
+  businessName = "Строительство",
+  totalBalance = "16 683 116 ₽",
+}: {
+  businessName?: string;
+  totalBalance?: string;
+} = {}) {
   return (
     <header className="flex h-[60px] items-center justify-between border-b border-ft-border bg-ft-surface px-4">
       <div className="flex items-center gap-3">
@@ -21,10 +27,10 @@ export function TopBar() {
       </div>
       <div className="flex items-center gap-4 text-[14px]">
         <button className="flex items-center gap-1 truncate font-semibold text-ft-text-on-nav hover:text-ft-primary">
-          Строительство <span className="text-ft-text-on-nav/60">▾</span>
+          {businessName} <span className="text-ft-text-on-nav/60">▾</span>
         </button>
         <span className="hidden font-bold text-ft-text-on-nav sm:inline">
-          16 683 116 ₽
+          {totalBalance}
         </span>
         <button className="flex items-center gap-1 text-ft-text-on-nav hover:text-ft-primary">
           Помощь <span className="text-ft-text-on-nav/60">▾</span>
