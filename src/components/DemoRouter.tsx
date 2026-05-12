@@ -21,22 +21,22 @@ const TOURS: TourCard[] = [
     scenario: "stroyka",
     href: "/",
     badge: "Стройка · СМР · ПИР",
-    title: "Тур по строительной компании",
+    title: "Разбор строительной компании",
     jtbd:
-      "«Понять, куда из 16 млн выручки до прибыли доходит только 12 — и на что уходят остальные 4 млн»",
+      "«Понять, куда из 16 млн ₽ выручки до прибыли доходит только 12 — и куда уходят остальные 4 млн ₽»",
     benefit:
       "Расхождение план/факт по объектам, направлениям и статьям. На реальной структуре стройки: подрядчики, материалы, ФОТ.",
-    caseCompany: "Кейс ремонтной компании",
+    caseCompany: "Пример ремонтной компании",
     caseSegment: "Стройка / Ремонт",
     caseQuote:
-      "Видим перерасход по объекту в течение недели, а не в конце месяца. Закрытие — со «всё пропало» до плановых правок.",
+      "Видим перерасход по объекту в течение недели, а не в конце месяца. Закрытие — со «всё пропало» до плановых правок. Цифры — пример.",
     caseUrl: "https://fintablo.ru/case",
   },
   {
     scenario: "agency",
     href: "/agency/tour",
     badge: "Агентство · Услуги с авансами",
-    title: "Тур по производственному агентству",
+    title: "Разбор производственного агентства",
     jtbd:
       "«Клиенты заплатили вперёд, а через месяц нечем платить команде»",
     benefit:
@@ -44,22 +44,22 @@ const TOURS: TourCard[] = [
     caseCompany: "Джони и Клайд",
     caseSegment: "Производственное агентство, видео",
     caseQuote:
-      "«Мы набрали предоплат, и было страшно. Не понимали сколько и кому должны». Незавершёнка — в 2 раза за 2 месяца.",
+      "«Мы набрали предоплат, и было страшно. Не понимали сколько и кому должны». Незавершёнка сократилась в 2 раза за 2 месяца.",
     caseUrl: "https://fintablo.ru/case/johny-and-clyde",
   },
   {
     scenario: "universal",
     href: "/start/tour",
     badge: "Монтаж · Сервис · ОВК / СКС",
-    title: "Тур по монтажной / сервисной компании",
+    title: "Разбор монтажной и сервисной компании",
     jtbd:
       "«Контракт планировался прибыльным — по факту собрали половину»",
     benefit:
       "Этап «Монтаж» в минусе, ФОТ-перерасход и гарантийные удержания разделены: что потеряно — и что просто придёт позже.",
-    caseCompany: "Климат-Сервис (демо)",
+    caseCompany: "Климат-Сервис (пример)",
     caseSegment: "Монтаж климатических систем",
     caseQuote:
-      "БЦ «Северная Долина»: план 7 млн → факт 5,56 млн. Из 1,44 млн расхождения 700 тыс. — ФОТ-перерасход, 524 тыс. — гарантийка через 6 месяцев.",
+      "БЦ «Северная Долина»: план 7 млн ₽ → факт 5,56 млн ₽. Из 1,44 млн ₽ расхождения 700 тыс. ₽ — ФОТ-перерасход, 524 тыс. ₽ — гарантийка через 6 месяцев. Цифры — пример.",
     caseUrl: "https://fintablo.ru/case",
   },
 ];
@@ -92,10 +92,10 @@ function Header() {
         </div>
         <nav className="hidden items-center gap-6 text-sm text-slate-700 sm:flex">
           <a href="#tours" className="hover:text-slate-900">
-            Выбрать тур
+            Выбрать разбор
           </a>
           <a href="#why" className="hover:text-slate-900">
-            Зачем три тура
+            Зачем три разбора
           </a>
           <a
             href="https://fintablo.ru"
@@ -123,9 +123,9 @@ function DemoSales() {
         </h1>
         <p className="mx-auto mt-5 max-w-3xl text-[17px] leading-relaxed text-slate-700">
           Это не презентация продукта и не маркетинговый ролик. Это
-          интерактивный разбор по реальным модулям Финтабло — с конкретными
-          цифрами по конкретному объекту или контракту. Вы кликаете, разбор
-          ведёт. На каждом шаге — что и почему изменилось.
+          интерактивный разбор на примере конкретного объекта или контракта —
+          в подтверждённых разделах Финтабло. Вы кликаете, разбор ведёт. На
+          каждом шаге — что и почему изменилось.
         </p>
 
         <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3">
@@ -144,8 +144,9 @@ function DemoSales() {
         </div>
 
         <p className="mt-8 text-[13px] text-slate-500">
-          Выберите ниже, какой бизнес ближе к вашему — мы покажем тур по
-          релевантной отрасли.
+          Разбор подобран для проектного бизнеса 60-1200 млн ₽ с собственником
+          или финдиректором. Выберите ниже, какой бизнес ближе к вашему — и мы
+          покажем пример по релевантной отрасли.
         </p>
       </div>
     </section>
@@ -168,13 +169,13 @@ function TourSelector() {
     <section id="tours" className="border-b border-slate-100 bg-white">
       <div className="mx-auto max-w-6xl px-5 py-16">
         <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
-          Выбор тура
+          Выбор разбора
         </p>
         <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
-          Какой бизнес ближе к вашему?
+          Какой проектный бизнес 60-1200 млн ₽ ближе к вашему?
         </h2>
         <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-slate-700">
-          Три тура — три типа проектного бизнеса. Каждый показывает, как
+          Три разбора — три типа проектного бизнеса. Каждый показывает, как
           Финтабло закрывает специфичный для отрасли разрыв между «деньги
           пришли» и «прибыль есть».
         </p>
@@ -186,8 +187,8 @@ function TourSelector() {
         </div>
 
         <p className="mt-6 text-[12px] text-slate-500">
-          Не уверены, какой выбрать? Возьмите тот, чьё JTBD ближе к вашей
-          ситуации. На любом из туров покажем общую логику Финтабло.
+          Не уверены, какой выбрать? Возьмите тот, чей главный вопрос ближе
+          к вашей ситуации. На любом из разборов покажем общую логику Финтабло.
         </p>
       </div>
     </section>
@@ -205,14 +206,14 @@ function Card({ tour }: { tour: TourCard }) {
       </h3>
 
       <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-        Главный вопрос (JTBD)
+        Главный вопрос собственника
       </p>
       <blockquote className="mt-1 border-l-2 border-blue-300 pl-3 text-[13px] italic leading-snug text-slate-800">
         {tour.jtbd}
       </blockquote>
 
       <p className="mt-4 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
-        Что покажет тур
+        Что покажет разбор
       </p>
       <p className="mt-1 text-[13px] leading-relaxed text-slate-700">
         {tour.benefit}
@@ -258,7 +259,7 @@ function Card({ tour }: { tour: TourCard }) {
           }
           className="block w-full rounded-md bg-emerald-600 px-4 py-3 text-center text-[14px] font-semibold text-white hover:bg-emerald-700"
         >
-          Запустить этот тур →
+          Открыть этот разбор →
         </Link>
       </div>
     </article>
@@ -270,7 +271,7 @@ function WhyThreeTours() {
     <section id="why" className="border-b border-slate-100 bg-slate-50/40">
       <div className="mx-auto max-w-5xl px-5 py-16">
         <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
-          Зачем три тура, а не один
+          Зачем три разбора, а не один
         </p>
         <h2 className="mt-2 text-[26px] font-bold leading-tight text-slate-900 sm:text-[30px]">
           Финтабло — один, но боль у проектных компаний — разная
@@ -293,9 +294,9 @@ function WhyThreeTours() {
           />
         </div>
         <p className="mt-6 text-[14px] leading-relaxed text-slate-700">
-          Каждый тур использует одни и те же модули Финтабло — Сделки, Карточка
-          сделки с этапами и операциями, Платёжный календарь, Виртуальные
-          счета. Разница только в данных и в фокусе разбора.
+          Каждый разбор использует одни и те же разделы Финтабло — Сделки,
+          Карточка сделки с этапами и операциями, Платёжный календарь,
+          Виртуальные счета. Разница только в данных и в фокусе разбора.
         </p>
       </div>
     </section>
@@ -327,8 +328,7 @@ function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-[12px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © Финтабло. Интерактивные демо-разборы для проектного бизнеса
-          60-1200 млн ₽.
+          © Финтабло. Интерактивные разборы для проектного бизнеса 60-1200 млн ₽.
         </p>
         <div className="flex flex-wrap gap-4">
           <a

@@ -53,7 +53,7 @@ function Header() {
             onClick={() => track("landing_nav_tour", {})}
             className="rounded bg-ft-primary px-3 py-1.5 font-medium text-white hover:opacity-90"
           >
-            Открыть демо →
+            Открыть разбор →
           </Link>
         </nav>
       </div>
@@ -68,7 +68,7 @@ function Hero() {
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-wider text-emerald-700">
-              Для проектных агентств 15-30 человек
+              Для проектных агентств 60-1200 млн ₽ с авансовой моделью
             </p>
             <h1 className="mt-3 text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
               Видеть, сколько денег осталось по каждой сделке —
@@ -102,8 +102,8 @@ function Hero() {
             </div>
 
             <p className="mt-4 text-[13px] text-slate-500">
-              7 экранов · 3 минуты · без регистрации · разбор реальной сделки
-              агентства
+              7 экранов · 3 минуты · без регистрации · разбор на примере
+              сделки агентства
             </p>
           </div>
 
@@ -321,7 +321,7 @@ function FourForcesSection() {
           />
           <BarrierCard
             barrier="«Нужен финдиректор или бухгалтер»"
-            answer="Методология за вас. Финтабло сам подсказывает, на какой счёт класть аванс, как разнести зарплату, что считается выручкой по подписанному акту."
+            answer="В Финтабло есть готовые разделы — Сделки, Операции, Счета, Платёжный календарь. Правила разнесения (на какой счёт класть аванс, как делить зарплату по сделкам) настраиваются один раз — вместе с аналитиком на 30-минутном разборе."
           />
           <BarrierCard
             barrier="«Цифры не сойдутся, как в моём Excel»"
@@ -379,11 +379,11 @@ function DemoTeaser() {
           <Link
             href={TOUR_HREF}
             onClick={() =>
-              track("landing_cta_demo_teaser", { cta: "Открыть демо" })
+              track("landing_cta_demo_teaser", { cta: "Открыть разбор" })
             }
             className="inline-flex h-12 items-center justify-center rounded bg-emerald-500 px-8 text-[15px] font-semibold text-white shadow-lg transition hover:bg-emerald-400"
           >
-            Открыть демо-разбор сделки →
+            Открыть разбор сделки →
           </Link>
         </div>
       </div>
@@ -586,7 +586,7 @@ function FaqSection() {
         <div className="mt-8 space-y-3">
           <FaqItem
             q="А что если у моего агентства не авансовая модель оплаты?"
-            a="Демо построено на авансовой модели — это самая болезненная ситуация для агентств. Если у вас постоплата или поэтапная оплата — общий принцип «деньги по сделке = аванс минус расходы по сделке» работает так же. Просто аванс может быть равен 0 или приходить частями."
+            a="Разбор построен на авансовой модели — это самая болезненная ситуация для агентств. Если у вас постоплата или поэтапная оплата — общий принцип «деньги по сделке = аванс минус расходы по сделке» работает так же. Просто аванс может быть равен 0 или приходить частями."
           />
           <FaqItem
             q="Сколько стоит и есть ли пробный период?"
@@ -602,7 +602,7 @@ function FaqSection() {
           />
           <FaqItem
             q="Я хочу попробовать прямо сейчас, но не готов сразу регистрироваться"
-            a="Для этого и есть демо-разбор. 7 экранов на реальной сделке агентства. Без регистрации, без формы. Поможет понять, ваш это инструмент или нет."
+            a="Для этого и есть разбор. 7 экранов на примере сделки агентства. Без регистрации, без формы. Поможет понять, ваш это инструмент или нет."
           />
         </div>
       </div>
@@ -655,11 +655,11 @@ function FinalCta() {
           <Link
             href={TOUR_HREF}
             onClick={() =>
-              track("landing_cta_final", { cta: "Открыть демо" })
+              track("landing_cta_final", { cta: "Открыть разбор" })
             }
             className="inline-flex h-12 items-center justify-center rounded bg-white px-8 text-[15px] font-semibold text-ft-primary shadow-lg transition hover:bg-slate-50"
           >
-            Открыть демо-разбор →
+            Открыть разбор →
           </Link>
         </div>
       </div>
@@ -672,7 +672,7 @@ function Footer() {
     <footer className="bg-slate-50">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-[12px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © Финтабло. Это демо-страница. Регистрация — на{" "}
+          © Финтабло. Это страница с интерактивным разбором. Регистрация — на{" "}
           <a
             href="https://fintablo.ru"
             target="_blank"
