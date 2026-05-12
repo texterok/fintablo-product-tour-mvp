@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/verify-analytics.mjs",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify:analytics": "node scripts/verify-analytics.mjs"
   },
   "dependencies": {
     "next": "16.2.4",

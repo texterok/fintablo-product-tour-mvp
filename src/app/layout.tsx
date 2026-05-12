@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { PosthogScript } from "@/components/PosthogScript";
+import { FintabloAnalystScript } from "@/components/FintabloAnalystScript";
 import "./globals.css";
 
 const sourceSansPro = localFont({
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="ru" className={`${sourceSansPro.variable} h-full antialiased`}>
       <body className="min-h-full bg-ft-bg text-ft-text">
         <PosthogScript />
+        <FintabloAnalystScript />
         {children}
       </body>
     </html>
