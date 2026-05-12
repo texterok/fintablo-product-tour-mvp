@@ -194,20 +194,18 @@ export function UniversalTourOverlay({
 
 function pageLabel(page: UniversalTourStep["page"]): string {
   switch (page) {
-    case "contracts":
-      return "Контракты";
-    case "anomaly":
-      return "Контракты";
-    case "cause":
-      return "Разложение";
-    case "evidence":
-      return "Операции";
-    case "soft-capture":
-      return "Сохранить пример";
+    case "deals":
+      return "Сделки";
+    case "stages":
+      return "Карточка сделки · Этапы";
+    case "operations":
+      return "Карточка сделки · Операции";
+    case "virtual-account":
+      return "Счета и реквизиты";
+    case "calendar":
+      return "Платёжный календарь";
     case "trust":
       return "Источники данных";
-    case "real-path":
-      return "Что дальше";
     case "cta":
       return "Записаться на разбор";
   }

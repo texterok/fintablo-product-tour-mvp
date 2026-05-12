@@ -40,7 +40,7 @@ const groups: Group[] = [
     label: "Деньги",
     Icon: MoneyIcon,
     items: [
-      { key: "operations", label: "Операции", pages: ["evidence"] },
+      { key: "operations", label: "Операции", pages: ["operations"] },
       { key: "auto", label: "Автоправила" },
     ],
   },
@@ -49,7 +49,11 @@ const groups: Group[] = [
     label: "Планирование",
     Icon: PlanningIcon,
     items: [
-      { key: "calendar", label: "Платёжный календарь" },
+      {
+        key: "calendar",
+        label: "Платёжный календарь",
+        pages: ["calendar"],
+      },
       { key: "requests", label: "Заявки на оплату" },
       { key: "budget-dds", label: "Бюджет ДДС" },
       { key: "budget-dir", label: "Бюджет ДиР" },
@@ -66,21 +70,17 @@ const groups: Group[] = [
     ],
   },
   {
-    key: "contracts",
-    label: "Контракты",
+    key: "deals",
+    label: "Сделки",
     Icon: DealsIcon,
     items: [
       {
-        key: "active",
-        label: "Активные контракты",
-        pages: ["contracts", "anomaly"],
+        key: "all",
+        label: "Учёт сделок",
+        pages: ["deals", "stages"],
       },
-      {
-        key: "cause-detail",
-        label: "Разложение",
-        pages: ["cause"],
-      },
-      { key: "archive", label: "Архив" },
+      { key: "services", label: "Услуги" },
+      { key: "goods", label: "Товары" },
       { key: "profitability", label: "Рентабельность" },
     ],
   },
@@ -93,7 +93,7 @@ const groups: Group[] = [
 ];
 
 const refsItems: Item[] = [
-  { key: "accounts", label: "Счета и реквизиты" },
+  { key: "accounts", label: "Счета и реквизиты", pages: ["virtual-account"] },
   { key: "counterparties", label: "Контрагенты" },
   { key: "categories", label: "Статьи" },
 ];
@@ -102,6 +102,7 @@ export function UniversalSidebar({ active }: { active: UniversalPage }) {
   const activeGroupKey = groups.find((g) =>
     g.items.some((i) => i.pages?.includes(active)),
   )?.key;
+  const isRefsActive = refsItems.some((i) => i.pages?.includes(active));
 
   return (
     <aside className="hidden w-[225px] shrink-0 flex-col border-r border-ft-border bg-ft-surface md:flex">
@@ -162,11 +163,44 @@ export function UniversalSidebar({ active }: { active: UniversalPage }) {
         })}
       </nav>
       <div>
-        <div className="flex items-center gap-2.5 border-l-[3px] border-transparent border-t border-t-ft-border px-4 py-2.5 text-[14px] font-semibold text-ft-text-on-nav">
-          <Chevron open={false} className="text-ft-text-on-nav/50" />
-          <ReferenceIcon className="text-ft-text-on-nav" />
+        <div
+          className={`flex items-center gap-2.5 border-l-[3px] border-t border-t-ft-border px-4 py-2.5 text-[14px] font-semibold ${
+            isRefsActive
+              ? "border-ft-primary bg-ft-surface-muted pl-[13px] text-ft-primary"
+              : "border-transparent text-ft-text-on-nav"
+          }`}
+        >
+          <Chevron
+            open={isRefsActive}
+            className={
+              isRefsActive ? "text-ft-primary" : "text-ft-text-on-nav/50"
+            }
+          />
+          <ReferenceIcon
+            className={isRefsActive ? "text-ft-primary" : "text-ft-text-on-nav"}
+          />
           Справочники
         </div>
+        {isRefsActive && (
+          <ul>
+            {refsItems.map((item) => {
+              const isActive = item.pages?.includes(active) ?? false;
+              return (
+                <li key={item.key}>
+                  <div
+                    className={`flex w-full items-center justify-between py-1.5 pl-[46px] pr-4 text-left ${
+                      isActive
+                        ? "font-semibold text-ft-primary"
+                        : "text-ft-text-on-nav/60"
+                    }`}
+                  >
+                    <span className="text-[13px]">{item.label}</span>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </div>
     </aside>
   );

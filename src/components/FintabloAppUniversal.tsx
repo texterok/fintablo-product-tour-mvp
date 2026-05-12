@@ -4,12 +4,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { TopBar } from "@/components/TopBar";
 import { UniversalSidebar } from "@/components/UniversalSidebar";
 import { UniversalTourOverlay } from "@/components/UniversalTourOverlay";
-import { UniversalContractsPage } from "@/screens/universal/UniversalContractsPage";
-import { UniversalCausePage } from "@/screens/universal/UniversalCausePage";
-import { UniversalEvidencePage } from "@/screens/universal/UniversalEvidencePage";
-import { UniversalSoftCapturePage } from "@/screens/universal/UniversalSoftCapturePage";
+import { UniversalDealsPage } from "@/screens/universal/UniversalDealsPage";
+import { UniversalStagesPage } from "@/screens/universal/UniversalStagesPage";
+import { UniversalOperationsPage } from "@/screens/universal/UniversalOperationsPage";
+import { UniversalVirtualAccountPage } from "@/screens/universal/UniversalVirtualAccountPage";
+import { UniversalCalendarPage } from "@/screens/universal/UniversalCalendarPage";
 import { UniversalTrustPage } from "@/screens/universal/UniversalTrustPage";
-import { UniversalRealPathPage } from "@/screens/universal/UniversalRealPathPage";
 import { UniversalCtaPage } from "@/screens/universal/UniversalCtaPage";
 import {
   universalTourScript,
@@ -18,15 +18,13 @@ import {
 import type { TourStepRole } from "@/lib/tour";
 import { initTracking, track, TOUR_EVENTS } from "@/lib/track";
 
-// Same page renders for contracts and anomaly steps (just different anchor highlighted).
 const pageComponents: Record<UniversalPage, () => React.JSX.Element> = {
-  contracts: UniversalContractsPage,
-  anomaly: UniversalContractsPage,
-  cause: UniversalCausePage,
-  evidence: UniversalEvidencePage,
-  "soft-capture": UniversalSoftCapturePage,
+  deals: UniversalDealsPage,
+  stages: UniversalStagesPage,
+  operations: UniversalOperationsPage,
+  "virtual-account": UniversalVirtualAccountPage,
+  calendar: UniversalCalendarPage,
   trust: UniversalTrustPage,
-  "real-path": UniversalRealPathPage,
   cta: UniversalCtaPage,
 };
 
@@ -47,7 +45,7 @@ const roleEvent = (role: TourStepRole): string | null => {
 };
 
 export function FintabloAppUniversal() {
-  const [page, setPage] = useState<UniversalPage>("contracts");
+  const [page, setPage] = useState<UniversalPage>("deals");
   const [tourActive, setTourActive] = useState(true);
   const [stepIndex, setStepIndex] = useState(0);
   const tourStartedAtRef = useRef<number | null>(null);
@@ -114,7 +112,7 @@ export function FintabloAppUniversal() {
             track(TOUR_EVENTS.AHA_COMPLETED, {
               scenario: "universal",
               elapsed_ms: elapsed,
-              from_step_id: "contracts-overview",
+              from_step_id: "deals-problem-row",
               to_step_id: step.id,
             });
             ahaCompletedRef.current = true;

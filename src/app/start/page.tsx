@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { FintabloAppUniversal } from "@/components/FintabloAppUniversal";
+import { UniversalLanding } from "@/components/UniversalLanding";
 
 export const metadata: Metadata = {
   title:
-    "Финтабло — рентабельность по контрактам в реальном времени",
+    "Финтабло — план/факт по контрактам для проектного бизнеса 60-1200 млн",
   description:
-    "Универсальный демо-разбор для монтажных и сервисных проектных компаний 60-1200 млн ₽. За 90 секунд покажем, как видно расхождение между планом и фактом по контрактам — и где конкретно утекают деньги.",
+    "Контракт планировался прибыльным — по факту собрали половину. За 90 секунд покажем, как Финтабло связывает план, факт и операции по одному контракту. Демо-разбор для монтажных и сервисных компаний.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
-export default function UniversalStartPage() {
-  return <FintabloAppUniversal />;
+export default function UniversalLandingPage() {
+  return <UniversalLanding />;
 }
