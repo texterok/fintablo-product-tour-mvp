@@ -26,6 +26,35 @@ const sourceSansPro = localFont({
   display: "swap",
 });
 
+// LabGrotesque — fintablo.ru landing font.
+// Extracted from live tildacdn fontfaces; see research/fintablo-design-system.md.
+const labGrotesque = localFont({
+  src: [
+    {
+      path: "../../public/fonts/lab-grotesque/LabGrotesque-300.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/lab-grotesque/LabGrotesque-400.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/lab-grotesque/LabGrotesque-500.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/lab-grotesque/LabGrotesque-700.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lab-grotesque",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Финтабло — куда утекает прибыль строительной компании",
   description:
@@ -48,7 +77,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={`${sourceSansPro.variable} h-full antialiased`}>
+    <html
+      lang="ru"
+      className={`${sourceSansPro.variable} ${labGrotesque.variable} h-full antialiased`}
+    >
       <body className="min-h-full bg-ft-bg text-ft-text">
         <PosthogScript />
         <FintabloAnalystScript />

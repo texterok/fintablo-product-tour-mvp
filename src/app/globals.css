@@ -1,6 +1,34 @@
 @import "tailwindcss";
 
 :root {
+  /* === fintablo.ru design system (landings only) === */
+  /* Extracted from live fintablo.ru — see research/fintablo-design-system.md */
+
+  /* Brand */
+  --ft-site-navy: #091a4e;
+  --ft-site-brand: #2951ca;
+  --ft-site-bright: #0260e8;
+  --ft-site-deep-navy: #052555;
+  --ft-site-blue-hover: #1c3c9b;
+
+  /* Body / neutrals */
+  --ft-site-text: #404c72;
+  --ft-site-text-muted: #515d89;
+  --ft-site-heading: #222222;
+  --ft-site-border: #c9c9c9;
+  --ft-site-border-light: #dde6ff;
+
+  /* Surface */
+  --ft-site-tint: #f4f7ff;
+  --ft-site-cream: #fbfbf9;
+  --ft-site-highlight: rgb(255, 253, 181);
+
+  /* State */
+  --ft-site-error: #ac2929;
+  --ft-site-focus: #2015FF;
+
+  /* === Fintablo app design (used inside tours) === */
+
   /* Surfaces */
   --ft-bg: #F1F2F7;
   --ft-surface: #FFFFFF;
@@ -36,6 +64,23 @@
 }
 
 @theme inline {
+  /* fintablo.ru site colors — landings only */
+  --color-ft-site-navy: var(--ft-site-navy);
+  --color-ft-site-brand: var(--ft-site-brand);
+  --color-ft-site-bright: var(--ft-site-bright);
+  --color-ft-site-deep-navy: var(--ft-site-deep-navy);
+  --color-ft-site-blue-hover: var(--ft-site-blue-hover);
+  --color-ft-site-text: var(--ft-site-text);
+  --color-ft-site-text-muted: var(--ft-site-text-muted);
+  --color-ft-site-heading: var(--ft-site-heading);
+  --color-ft-site-border: var(--ft-site-border);
+  --color-ft-site-border-light: var(--ft-site-border-light);
+  --color-ft-site-tint: var(--ft-site-tint);
+  --color-ft-site-cream: var(--ft-site-cream);
+  --color-ft-site-highlight: var(--ft-site-highlight);
+  --color-ft-site-error: var(--ft-site-error);
+
+  /* fintablo app colors — inside tours */
   --color-ft-bg: var(--ft-bg);
   --color-ft-surface: var(--ft-surface);
   --color-ft-surface-muted: var(--ft-surface-muted);
@@ -58,6 +103,7 @@
   --color-ft-danger-bg: var(--ft-danger-bg);
   --color-ft-danger-text: var(--ft-danger-text);
   --font-sans: var(--font-source-sans-pro), system-ui, -apple-system, sans-serif;
+  --font-site: var(--font-lab-grotesque), Arial, sans-serif;
 }
 
 html,
@@ -65,6 +111,29 @@ body {
   font-family: var(--font-source-sans-pro), system-ui, -apple-system, sans-serif;
   background: var(--ft-bg);
   color: var(--ft-text);
+}
+
+/* Landing pages opt into the site font + colors via .site-theme on root */
+.site-theme {
+  font-family: var(--font-lab-grotesque), Arial, sans-serif;
+  background: var(--ft-site-white, #ffffff);
+  color: var(--ft-site-text);
+  -webkit-font-smoothing: antialiased;
+}
+.site-theme h1,
+.site-theme h2,
+.site-theme h3,
+.site-theme h4 {
+  color: var(--ft-site-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.site-theme a {
+  color: var(--ft-site-brand);
+  text-decoration: none;
+}
+.site-theme a:hover {
+  color: var(--ft-site-blue-hover);
 }
 
 @keyframes fadeIn {

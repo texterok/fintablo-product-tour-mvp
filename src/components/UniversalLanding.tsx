@@ -7,7 +7,7 @@ const TOUR_HREF = "/start/tour";
 
 export function UniversalLanding() {
   return (
-    <div className="min-h-svh bg-white text-slate-900">
+    <div className="site-theme min-h-svh">
       <Header />
       <main>
         <Hero />
@@ -26,24 +26,24 @@ export function UniversalLanding() {
 
 function Header() {
   return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex h-[60px] max-w-6xl items-center justify-between px-5">
+    <header className="border-b border-ft-site-border-light bg-white">
+      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5">
         <div className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-ft-primary text-[13px] font-bold text-white">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-ft-site-navy text-[13px] font-bold text-white">
             ФТ
           </span>
-          <span className="text-[18px] font-bold text-ft-primary">
+          <span className="text-[19px] font-bold text-ft-site-navy">
             Финтабло
           </span>
         </div>
-        <nav className="hidden items-center gap-6 text-sm text-slate-700 sm:flex">
-          <a href="#pain" className="hover:text-slate-900">
+        <nav className="hidden items-center gap-7 text-[15px] text-ft-site-text sm:flex">
+          <a href="#pain" className="hover:text-ft-site-navy">
             Где болит
           </a>
-          <a href="#tour" className="hover:text-slate-900">
+          <a href="#tour" className="hover:text-ft-site-navy">
             Что внутри разбора
           </a>
-          <a href="#cases" className="hover:text-slate-900">
+          <a href="#cases" className="hover:text-ft-site-navy">
             Кейсы
           </a>
         </nav>
@@ -55,7 +55,7 @@ function Header() {
               cta_location: "header",
             })
           }
-          className="rounded-md bg-ft-primary px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+          className="rounded-full bg-ft-site-brand px-5 py-2.5 text-[14px] font-bold text-white hover:bg-ft-site-blue-hover"
         >
           Запустить разбор
         </Link>
@@ -66,25 +66,25 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="border-b border-slate-100 bg-gradient-to-br from-blue-50/40 via-white to-emerald-50/30">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+    <section className="border-b border-ft-site-border-light bg-ft-site-tint">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
-            <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-amber-800">
+            <span className="inline-block rounded-full bg-ft-site-navy px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-white">
               Для проектных и сервисных компаний 60-1200 млн ₽
             </span>
-            <h1 className="mt-5 text-[34px] font-bold leading-tight text-slate-900 sm:text-[44px]">
+            <h1 className="mt-5 text-[36px] font-bold leading-[1.15] tracking-tight text-ft-site-navy sm:text-[52px]">
               Контракт планировался прибыльным.
               <br />
               По факту — собрали половину.
             </h1>
-            <p className="mt-5 text-[17px] leading-relaxed text-slate-700">
+            <p className="mt-5 text-[18px] leading-[1.55] text-ft-site-text">
               За 90 секунд покажем, как Финтабло связывает план, факт и
               операции по одному контракту — и почему ФОТ-перерасход и
               гарантийные удержания становятся видны заранее, а не в конце
               квартала.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={TOUR_HREF}
                 onClick={() =>
@@ -93,7 +93,7 @@ function Hero() {
                     cta_location: "hero_primary",
                   })
                 }
-                className="rounded-md bg-emerald-600 px-6 py-3 text-center text-[15px] font-semibold text-white shadow-sm hover:bg-emerald-700"
+                className="rounded-full bg-ft-site-brand px-7 py-3.5 text-center text-[15px] font-bold text-white hover:bg-ft-site-blue-hover"
               >
                 Запустить разбор контракта →
               </Link>
@@ -105,20 +105,20 @@ function Hero() {
                     cta_location: "hero_secondary",
                   })
                 }
-                className="rounded-md border border-slate-300 bg-white px-6 py-3 text-center text-[15px] font-medium text-slate-800 hover:bg-slate-50"
+                className="rounded-full border border-ft-site-border bg-white px-7 py-3.5 text-center text-[15px] font-medium text-ft-site-navy hover:bg-ft-site-tint"
               >
                 Сначала покажите, в чём боль
               </a>
             </div>
-            <p className="mt-4 text-[12px] text-slate-500">
+            <p className="mt-5 text-[13px] text-ft-site-text-muted">
               Без презентаций · 90 секунд · без привязки карты
             </p>
           </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          <div className="rounded-[10px] border border-ft-site-border-light bg-white p-7 shadow-[0_6px_24px_rgba(9,26,78,0.08)]">
+            <p className="text-[11px] font-medium uppercase tracking-wider text-ft-site-text-muted">
               Один контракт. Цифры из примера
             </p>
-            <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+            <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
               <MiniMetric label="План" value="1 800 000 ₽" tone="neutral" />
               <MiniMetric label="Факт" value="560 000 ₽" tone="bad" />
               <MiniMetric label="ФОТ-перерасход" value="−700 000 ₽" tone="bad" />
@@ -129,7 +129,7 @@ function Hero() {
                 hint="вернётся через 6 мес"
               />
             </div>
-            <div className="mt-4 rounded-md border border-emerald-200 bg-emerald-50/50 p-3 text-[12px] leading-relaxed text-slate-700">
+            <div className="mt-5 rounded-[8px] border border-ft-site-border-light bg-ft-site-tint p-3 text-[12px] leading-relaxed text-ft-site-text">
               В разборе эти 4 цифры собираются из банк-выписки и карточки
               сделки в Финтабло. Цифры — пример. На ваших данных будет ваша
               картина.
@@ -154,23 +154,23 @@ function MiniMetric({
 }) {
   const bg =
     tone === "bad"
-      ? "border-rose-200 bg-rose-50/50"
+      ? "border-[#f0c5c5] bg-[#fff5f5]"
       : tone === "warn"
-        ? "border-amber-200 bg-amber-50/50"
-        : "border-slate-200 bg-white";
+        ? "border-[#ffeaa6] bg-[#fffbe6]"
+        : "border-ft-site-border-light bg-white";
   const valueColor =
     tone === "bad"
-      ? "text-rose-700"
+      ? "text-ft-site-error"
       : tone === "warn"
-        ? "text-amber-700"
-        : "text-slate-900";
+        ? "text-[#8a6d00]"
+        : "text-ft-site-navy";
   return (
-    <div className={`rounded-md border p-3 ${bg}`}>
-      <p className="text-[11px] font-medium text-slate-600">{label}</p>
-      <p className={`mt-1 text-lg font-semibold tabular-nums ${valueColor}`}>
+    <div className={`rounded-[8px] border p-3 ${bg}`}>
+      <p className="text-[11px] font-medium text-ft-site-text-muted">{label}</p>
+      <p className={`mt-1 text-lg font-bold tabular-nums ${valueColor}`}>
         {value}
       </p>
-      {hint && <p className="mt-1 text-[10px] text-slate-500">{hint}</p>}
+      {hint && <p className="mt-1 text-[10px] text-ft-site-text-muted">{hint}</p>}
     </div>
   );
 }
@@ -208,43 +208,43 @@ function PainSection() {
   ];
 
   return (
-    <section id="pain" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section id="pain" className="border-b border-ft-site-border-light bg-white">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Где сейчас болит
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 max-w-3xl text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           Почему обычные инструменты молчат до конца квартала
         </h2>
-        <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-slate-700">
+        <p className="mt-4 max-w-3xl text-[17px] leading-[1.55] text-ft-site-text">
           В проектном бизнесе 60-1200 млн ₽ деньги уходят на конкретные этапы
           конкретных контрактов. Excel, 1С и пересказы бухгалтера не видят этот
           уровень. Расхождение видно — но уже постфактум.
         </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {pains.map((p) => (
             <div
               key={p.tool}
-              className="rounded-lg border border-slate-200 bg-slate-50/40 p-5"
+              className="rounded-[10px] border border-ft-site-border-light bg-ft-site-tint p-6"
             >
               <div className="flex items-baseline justify-between gap-3">
-                <h3 className="text-[16px] font-semibold text-slate-900">
+                <h3 className="text-[18px] font-bold text-ft-site-navy">
                   {p.tool}
                 </h3>
-                <span className="rounded-full bg-rose-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-rose-700">
+                <span className="rounded-full bg-white px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-ft-site-error">
                   {p.cost}
                 </span>
               </div>
-              <p className="mt-1 text-[12px] font-medium text-slate-500">
+              <p className="mt-1 text-[12px] font-medium text-ft-site-text-muted">
                 {p.what}
               </p>
-              <p className="mt-3 text-[14px] leading-relaxed text-slate-700">
+              <p className="mt-3 text-[15px] leading-[1.55] text-ft-site-text">
                 {p.problem}
               </p>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-[13px] text-slate-500">
+        <p className="mt-7 text-[14px] text-ft-site-text-muted">
           Не «Excel плохой» — Excel и 1С нужны и останутся. Проблема в том, что
           между бухгалтерской правдой и управленческим решением — разрыв.
           Финтабло закрывает именно его.
@@ -279,35 +279,35 @@ function TourPreviewSection() {
   ];
 
   return (
-    <section id="tour" className="border-b border-slate-100 bg-slate-50/40">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section id="tour" className="border-b border-ft-site-border-light bg-ft-site-tint">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Что внутри 90-секундного разбора
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           4 экрана. Один контракт. Полная картина
         </h2>
-        <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-slate-700">
+        <p className="mt-4 max-w-3xl text-[17px] leading-[1.55] text-ft-site-text">
           Разбор использует подтверждённые разделы Финтабло — Сделки, Карточка
           сделки с этапами и операциями, Платёжный календарь, Виртуальные
           счета. Цифры — пример. После подключения те же разделы покажут вашу
           картину.
         </p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {steps.map((s) => (
             <div
               key={s.n}
-              className="rounded-lg border border-slate-200 bg-white p-5"
+              className="rounded-[10px] border border-ft-site-border-light bg-white p-6"
             >
-              <div className="flex items-start gap-3">
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
+              <div className="flex items-start gap-4">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ft-site-navy text-sm font-bold text-white">
                   {s.n}
                 </span>
                 <div>
-                  <h3 className="text-[15px] font-semibold text-slate-900">
+                  <h3 className="text-[17px] font-bold text-ft-site-navy">
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-slate-700">
+                  <p className="mt-2 text-[14px] leading-[1.55] text-ft-site-text">
                     {s.desc}
                   </p>
                 </div>
@@ -315,7 +315,7 @@ function TourPreviewSection() {
             </div>
           ))}
         </div>
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center">
           <Link
             href={TOUR_HREF}
             onClick={() =>
@@ -324,7 +324,7 @@ function TourPreviewSection() {
                 cta_location: "tour_preview",
               })
             }
-            className="inline-block rounded-md bg-emerald-600 px-6 py-3 text-[15px] font-semibold text-white shadow-sm hover:bg-emerald-700"
+            className="inline-block rounded-full bg-ft-site-brand px-7 py-3.5 text-[15px] font-bold text-white hover:bg-ft-site-blue-hover"
           >
             Открыть разбор →
           </Link>
@@ -359,24 +359,24 @@ function BarriersToSolutionSection() {
   ];
 
   return (
-    <section className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section className="border-b border-ft-site-border-light bg-white">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Что обычно останавливает перейти
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           Барьеры на новое решение — и как их снимаем
         </h2>
-        <div className="mt-8 grid gap-4 lg:grid-cols-2">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
           {barriers.map((b) => (
             <div
               key={b.fear}
-              className="rounded-lg border border-slate-200 bg-white p-5"
+              className="rounded-[10px] border border-ft-site-border-light bg-ft-site-tint p-6"
             >
-              <p className="text-[15px] font-semibold text-slate-900">
+              <p className="text-[16px] font-bold text-ft-site-navy">
                 {b.fear}
               </p>
-              <p className="mt-3 border-l-2 border-emerald-300 pl-4 text-[14px] leading-relaxed text-slate-700">
+              <p className="mt-3 border-l-2 border-ft-site-brand pl-4 text-[15px] leading-[1.55] text-ft-site-text">
                 {b.answer}
               </p>
             </div>
@@ -407,24 +407,24 @@ function BarriersToJobSection() {
   ];
 
   return (
-    <section className="border-b border-slate-100 bg-slate-50/40">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section className="border-b border-ft-site-border-light bg-ft-site-tint">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Что обычно тормозит начать
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           Барьеры начать действовать — и цена промедления
         </h2>
-        <div className="mt-8 space-y-4">
+        <div className="mt-10 space-y-4">
           {habits.map((h) => (
             <div
               key={h.habit}
-              className="rounded-lg border border-slate-200 bg-white p-5"
+              className="rounded-[10px] border border-ft-site-border-light bg-white p-6"
             >
-              <p className="text-[16px] font-semibold text-slate-900">
+              <p className="text-[17px] font-bold text-ft-site-navy">
                 {h.habit}
               </p>
-              <p className="mt-2 text-[14px] leading-relaxed text-slate-700">
+              <p className="mt-2 text-[15px] leading-[1.55] text-ft-site-text">
                 {h.counter}
               </p>
             </div>
@@ -464,35 +464,35 @@ function SocialProofSection() {
   ];
 
   return (
-    <section id="cases" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section id="cases" className="border-b border-ft-site-border-light bg-white">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Откуда знаем, что это работает
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           Три кейса проектного бизнеса — с разным масштабом
         </h2>
-        <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-slate-700">
+        <p className="mt-4 max-w-3xl text-[17px] leading-[1.55] text-ft-site-text">
           Это не среднее по рынку. Это три истории компаний, которые жили на
           Excel и Google-таблицах — и где разрыв между ними и Финтабло был
           измерим конкретными цифрами.
         </p>
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {cases.map((c) => (
             <div
               key={c.company}
-              className="rounded-lg border border-slate-200 bg-white p-5"
+              className="rounded-[10px] border border-ft-site-border-light bg-ft-site-tint p-6"
             >
-              <p className="text-[15px] font-semibold text-slate-900">
+              <p className="text-[17px] font-bold text-ft-site-navy">
                 {c.company}
               </p>
-              <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-slate-500">
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-ft-site-text-muted">
                 {c.segment}
               </p>
-              <blockquote className="mt-4 border-l-2 border-slate-300 pl-3 text-[13px] italic leading-relaxed text-slate-700">
+              <blockquote className="mt-4 border-l-2 border-ft-site-brand pl-3 text-[14px] italic leading-[1.55] text-ft-site-text">
                 {c.quote}
               </blockquote>
-              <p className="mt-4 text-[13px] font-semibold text-emerald-700">
+              <p className="mt-4 text-[14px] font-bold text-ft-site-navy">
                 {c.result}
               </p>
               <a
@@ -505,14 +505,14 @@ function SocialProofSection() {
                     case: c.company,
                   })
                 }
-                className="mt-3 inline-block text-[12px] text-blue-600 underline hover:text-blue-800"
+                className="mt-3 inline-block text-[13px] font-medium text-ft-site-brand hover:text-ft-site-blue-hover"
               >
                 Полный кейс →
               </a>
             </div>
           ))}
         </div>
-        <p className="mt-6 text-[12px] text-slate-500">
+        <p className="mt-7 text-[13px] text-ft-site-text-muted">
           Полные истории — на fintablo.ru/case
         </p>
       </div>
@@ -522,20 +522,20 @@ function SocialProofSection() {
 
 function ThirtyMinutesSection() {
   return (
-    <section className="border-b border-slate-100 bg-slate-50/40">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section className="border-b border-ft-site-border-light bg-white">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Что произойдёт за 30 минут на разборе
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           Без презентаций. Сразу к делу
         </h2>
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          <div className="rounded-lg border border-slate-200 bg-white p-5">
-            <h3 className="text-[15px] font-semibold text-slate-900">
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <div className="rounded-[10px] border border-ft-site-border-light bg-ft-site-tint p-6">
+            <h3 className="text-[17px] font-bold text-ft-site-navy">
               Что нужно будет сделать
             </h3>
-            <ul className="mt-3 space-y-2 text-[14px] text-slate-700">
+            <ul className="mt-4 space-y-2.5 text-[15px] text-ft-site-text">
               <Bullet>Выбрать один проблемный контракт</Bullet>
               <Bullet>Дать аналитику доступ к банковской выписке за месяц</Bullet>
               <Bullet>
@@ -544,23 +544,23 @@ function ThirtyMinutesSection() {
               <Bullet>30 минут вашего времени на созвоне</Bullet>
             </ul>
           </div>
-          <div className="rounded-lg border border-emerald-200 bg-emerald-50/40 p-5">
-            <h3 className="text-[15px] font-semibold text-slate-900">
+          <div className="rounded-[10px] border border-ft-site-brand bg-ft-site-navy p-6 text-white">
+            <h3 className="text-[17px] font-bold text-white">
               Что увидите по итогу
             </h3>
-            <ul className="mt-3 space-y-2 text-[14px] text-slate-700">
-              <Bullet>
+            <ul className="mt-4 space-y-2.5 text-[15px] text-[#dde6ff]">
+              <BulletDark>
                 Картину как в разборе — но на ВАШИХ цифрах, не на синтетике
-              </Bullet>
-              <Bullet>
+              </BulletDark>
+              <BulletDark>
                 Куда конкретно ушли деньги по выбранному контракту
-              </Bullet>
-              <Bullet>
+              </BulletDark>
+              <BulletDark>
                 Какие интеграции нужны для постоянной картины (банк, 1С, Excel)
-              </Bullet>
-              <Bullet>
+              </BulletDark>
+              <BulletDark>
                 14 дней доступа к продукту, без привязки карты
-              </Bullet>
+              </BulletDark>
             </ul>
           </div>
         </div>
@@ -571,8 +571,17 @@ function ThirtyMinutesSection() {
 
 function Bullet({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex gap-2">
-      <span className="mt-1 text-emerald-600">✓</span>
+    <li className="flex gap-2.5">
+      <span className="mt-1 text-ft-site-brand">✓</span>
+      <span>{children}</span>
+    </li>
+  );
+}
+
+function BulletDark({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex gap-2.5">
+      <span className="mt-1 text-white">✓</span>
       <span>{children}</span>
     </li>
   );
@@ -580,16 +589,16 @@ function Bullet({ children }: { children: React.ReactNode }) {
 
 function FinalCta() {
   return (
-    <section className="bg-gradient-to-br from-emerald-50/60 via-white to-blue-50/40">
-      <div className="mx-auto max-w-4xl px-5 py-20 text-center">
-        <h2 className="text-[30px] font-bold leading-tight text-slate-900 sm:text-[38px]">
+    <section className="bg-ft-site-navy text-white">
+      <div className="mx-auto max-w-4xl px-5 py-24 text-center">
+        <h2 className="text-[34px] font-bold leading-[1.15] text-white sm:text-[44px]">
           Запустите разбор контракта прямо сейчас
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[16px] leading-relaxed text-slate-700">
+        <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.55] text-[#c9d3eb]">
           90 секунд на разбор «Климат-Сервиса». Без формы и без почты на этом
           шаге. Контакты — только если захотите перенести разбор на свои данные.
         </p>
-        <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href={TOUR_HREF}
             onClick={() =>
@@ -598,12 +607,12 @@ function FinalCta() {
                 cta_location: "final",
               })
             }
-            className="rounded-md bg-emerald-600 px-7 py-3.5 text-[16px] font-semibold text-white shadow-sm hover:bg-emerald-700"
+            className="rounded-full bg-white px-8 py-4 text-[16px] font-bold text-ft-site-navy hover:bg-ft-site-tint"
           >
             Запустить разбор контракта →
           </Link>
         </div>
-        <p className="mt-4 text-[12px] text-slate-500">
+        <p className="mt-5 text-[12px] text-[#8c9bc9]">
           Это интерактивный пример. Настоящая регистрация — на fintablo.ru
         </p>
       </div>
@@ -613,18 +622,18 @@ function FinalCta() {
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-[12px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="border-t border-ft-site-border-light bg-white">
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-10 text-[13px] text-ft-site-text-muted sm:flex-row sm:items-center sm:justify-between">
         <p>
           © Финтабло. Это интерактивный разбор для проектных компаний 60-1200
           млн ₽.
         </p>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-5">
           <a
             href="https://fintablo.ru"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-slate-800"
+            className="hover:text-ft-site-navy"
           >
             fintablo.ru
           </a>
@@ -632,7 +641,7 @@ function Footer() {
             href="https://help.fintablo.ru"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-slate-800"
+            className="hover:text-ft-site-navy"
           >
             help.fintablo.ru
           </a>

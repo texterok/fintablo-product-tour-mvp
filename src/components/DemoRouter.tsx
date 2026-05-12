@@ -66,7 +66,7 @@ const TOURS: TourCard[] = [
 
 export function DemoRouter() {
   return (
-    <div className="min-h-svh bg-white text-slate-900">
+    <div className="site-theme min-h-svh">
       <Header />
       <main>
         <DemoSales />
@@ -80,28 +80,28 @@ export function DemoRouter() {
 
 function Header() {
   return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex h-[60px] max-w-6xl items-center justify-between px-5">
+    <header className="border-b border-ft-site-border-light bg-white">
+      <div className="mx-auto flex h-[68px] max-w-6xl items-center justify-between px-5">
         <div className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-ft-primary text-[13px] font-bold text-white">
+          <span className="flex size-9 items-center justify-center rounded-lg bg-ft-site-navy text-[13px] font-bold text-white">
             ФТ
           </span>
-          <span className="text-[18px] font-bold text-ft-primary">
+          <span className="text-[19px] font-bold text-ft-site-navy">
             Финтабло
           </span>
         </div>
-        <nav className="hidden items-center gap-6 text-sm text-slate-700 sm:flex">
-          <a href="#tours" className="hover:text-slate-900">
+        <nav className="hidden items-center gap-7 text-[15px] text-ft-site-text sm:flex">
+          <a href="#tours" className="hover:text-ft-site-navy">
             Выбрать разбор
           </a>
-          <a href="#why" className="hover:text-slate-900">
+          <a href="#why" className="hover:text-ft-site-navy">
             Зачем три разбора
           </a>
           <a
             href="https://fintablo.ru"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-slate-900"
+            className="hover:text-ft-site-navy"
           >
             fintablo.ru
           </a>
@@ -113,22 +113,22 @@ function Header() {
 
 function DemoSales() {
   return (
-    <section className="border-b border-slate-100 bg-gradient-to-br from-blue-50/40 via-white to-emerald-50/30">
-      <div className="mx-auto max-w-5xl px-5 py-16 text-center sm:py-20">
-        <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-blue-800">
+    <section className="border-b border-ft-site-border-light bg-ft-site-tint">
+      <div className="mx-auto max-w-5xl px-5 py-20 text-center sm:py-24">
+        <span className="inline-block rounded-full bg-ft-site-navy px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-white">
           90 секунд · без формы · без презентаций
         </span>
-        <h1 className="mt-5 text-[34px] font-bold leading-tight text-slate-900 sm:text-[44px]">
+        <h1 className="mt-6 text-[36px] font-bold leading-[1.15] tracking-tight text-ft-site-navy sm:text-[52px]">
           Покажем за 90 секунд, где из вашей выручки утекает прибыль
         </h1>
-        <p className="mx-auto mt-5 max-w-3xl text-[17px] leading-relaxed text-slate-700">
+        <p className="mx-auto mt-5 max-w-3xl text-[18px] leading-[1.55] text-ft-site-text">
           Это не презентация продукта и не маркетинговый ролик. Это
           интерактивный разбор на примере конкретного объекта или контракта —
           в подтверждённых разделах Финтабло. Вы кликаете, разбор ведёт. На
           каждом шаге — что и почему изменилось.
         </p>
 
-        <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-3">
+        <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
           <Benefit
             label="Что узнаете"
             text="Где именно протекают деньги по конкретному объекту"
@@ -143,7 +143,7 @@ function DemoSales() {
           />
         </div>
 
-        <p className="mt-8 text-[13px] text-slate-500">
+        <p className="mt-10 text-[14px] text-ft-site-text-muted">
           Разбор подобран для проектного бизнеса 60-1200 млн ₽ с собственником
           или финдиректором. Выберите ниже, какой бизнес ближе к вашему — и мы
           покажем пример по релевантной отрасли.
@@ -155,11 +155,11 @@ function DemoSales() {
 
 function Benefit({ label, text }: { label: string; text: string }) {
   return (
-    <div className="rounded-md border border-slate-200 bg-white p-4 text-left">
-      <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+    <div className="rounded-[10px] border border-ft-site-border-light bg-white p-5 text-left">
+      <p className="text-[11px] font-medium uppercase tracking-wider text-ft-site-brand">
         {label}
       </p>
-      <p className="mt-2 text-[13px] leading-relaxed text-slate-800">{text}</p>
+      <p className="mt-2 text-[14px] leading-[1.55] text-ft-site-text">{text}</p>
     </div>
   );
 }
@@ -167,26 +167,26 @@ function Benefit({ label, text }: { label: string; text: string }) {
 function TourSelector() {
   return (
     <section id="tours" className="border-b border-slate-100 bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+      <div className="mx-auto max-w-6xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Выбор разбора
         </p>
-        <h2 className="mt-2 text-[28px] font-bold leading-tight text-slate-900 sm:text-[32px]">
+        <h2 className="mt-3 max-w-3xl text-[32px] font-bold leading-[1.2] text-ft-site-navy sm:text-[40px]">
           Какой проектный бизнес 60-1200 млн ₽ ближе к вашему?
         </h2>
-        <p className="mt-3 max-w-3xl text-[15px] leading-relaxed text-slate-700">
+        <p className="mt-4 max-w-3xl text-[17px] leading-[1.55] text-ft-site-text">
           Три разбора — три типа проектного бизнеса. Каждый показывает, как
           Финтабло закрывает специфичный для отрасли разрыв между «деньги
           пришли» и «прибыль есть».
         </p>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {TOURS.map((t) => (
             <Card key={t.scenario} tour={t} />
           ))}
         </div>
 
-        <p className="mt-6 text-[12px] text-slate-500">
+        <p className="mt-7 text-[13px] text-ft-site-text-muted">
           Не уверены, какой выбрать? Возьмите тот, чей главный вопрос ближе
           к вашей ситуации. На любом из разборов покажем общую логику Финтабло.
         </p>
@@ -197,36 +197,36 @@ function TourSelector() {
 
 function Card({ tour }: { tour: TourCard }) {
   return (
-    <article className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:border-emerald-300 hover:shadow">
-      <span className="inline-block w-fit rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-slate-700">
+    <article className="flex h-full flex-col rounded-[10px] border border-ft-site-border-light bg-white p-6 transition hover:border-ft-site-brand hover:shadow-[0_6px_24px_rgba(9,26,78,0.1)]">
+      <span className="inline-block w-fit rounded-full bg-ft-site-tint px-3 py-1 text-[10px] font-medium uppercase tracking-wider text-ft-site-navy">
         {tour.badge}
       </span>
-      <h3 className="mt-3 text-[18px] font-semibold text-slate-900">
+      <h3 className="mt-4 text-[19px] font-bold leading-[1.25] text-ft-site-navy">
         {tour.title}
       </h3>
 
-      <p className="mt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+      <p className="mt-4 text-[11px] font-medium uppercase tracking-wider text-ft-site-brand">
         Главный вопрос собственника
       </p>
-      <blockquote className="mt-1 border-l-2 border-blue-300 pl-3 text-[13px] italic leading-snug text-slate-800">
+      <blockquote className="mt-2 border-l-2 border-ft-site-brand pl-3 text-[14px] italic leading-[1.5] text-ft-site-navy">
         {tour.jtbd}
       </blockquote>
 
-      <p className="mt-4 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+      <p className="mt-5 text-[11px] font-medium uppercase tracking-wider text-ft-site-text-muted">
         Что покажет разбор
       </p>
-      <p className="mt-1 text-[13px] leading-relaxed text-slate-700">
+      <p className="mt-1.5 text-[14px] leading-[1.55] text-ft-site-text">
         {tour.benefit}
       </p>
 
-      <div className="mt-5 rounded-md border border-emerald-200 bg-emerald-50/40 p-3">
-        <p className="text-[10px] font-semibold uppercase tracking-wider text-emerald-700">
+      <div className="mt-5 rounded-[8px] border border-ft-site-border-light bg-ft-site-tint p-4">
+        <p className="text-[10px] font-medium uppercase tracking-wider text-ft-site-brand">
           Кейс из отрасли · {tour.caseSegment}
         </p>
-        <p className="mt-1 text-[13px] font-semibold text-slate-900">
+        <p className="mt-1.5 text-[14px] font-bold text-ft-site-navy">
           {tour.caseCompany}
         </p>
-        <p className="mt-1 text-[12px] leading-snug text-slate-700">
+        <p className="mt-1.5 text-[13px] leading-[1.5] text-ft-site-text">
           {tour.caseQuote}
         </p>
         {tour.caseUrl !== "https://fintablo.ru/case" && (
@@ -240,14 +240,14 @@ function Card({ tour }: { tour: TourCard }) {
                 case: tour.caseCompany,
               })
             }
-            className="mt-2 inline-block text-[11px] text-emerald-700 underline hover:text-emerald-900"
+            className="mt-2 inline-block text-[12px] font-medium text-ft-site-brand hover:text-ft-site-blue-hover"
           >
             Полный кейс →
           </a>
         )}
       </div>
 
-      <div className="mt-auto pt-5">
+      <div className="mt-auto pt-6">
         <Link
           href={tour.href}
           onClick={() =>
@@ -257,7 +257,7 @@ function Card({ tour }: { tour: TourCard }) {
               tour_href: tour.href,
             })
           }
-          className="block w-full rounded-md bg-emerald-600 px-4 py-3 text-center text-[14px] font-semibold text-white hover:bg-emerald-700"
+          className="block w-full rounded-full bg-ft-site-brand px-5 py-3 text-center text-[14px] font-bold text-white hover:bg-ft-site-blue-hover"
         >
           Открыть этот разбор →
         </Link>
@@ -268,15 +268,15 @@ function Card({ tour }: { tour: TourCard }) {
 
 function WhyThreeTours() {
   return (
-    <section id="why" className="border-b border-slate-100 bg-slate-50/40">
-      <div className="mx-auto max-w-5xl px-5 py-16">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-slate-500">
+    <section id="why" className="border-b border-ft-site-border-light bg-ft-site-tint">
+      <div className="mx-auto max-w-5xl px-5 py-20">
+        <p className="text-[12px] font-medium uppercase tracking-wider text-ft-site-brand">
           Зачем три разбора, а не один
         </p>
-        <h2 className="mt-2 text-[26px] font-bold leading-tight text-slate-900 sm:text-[30px]">
+        <h2 className="mt-3 text-[30px] font-bold leading-[1.2] text-ft-site-navy sm:text-[36px]">
           Финтабло — один, но боль у проектных компаний — разная
         </h2>
-        <div className="mt-7 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-3">
           <ReasonCard
             n="1"
             title="У стройки болит план/факт по объектам"
@@ -293,7 +293,7 @@ function WhyThreeTours() {
             text="10% удержано до сдачи через полгода — это потеря или просто кассовый разрыв?"
           />
         </div>
-        <p className="mt-6 text-[14px] leading-relaxed text-slate-700">
+        <p className="mt-7 text-[15px] leading-[1.55] text-ft-site-text">
           Каждый разбор использует одни и те же разделы Финтабло — Сделки,
           Карточка сделки с этапами и операциями, Платёжный календарь,
           Виртуальные счета. Разница только в данных и в фокусе разбора.
@@ -313,29 +313,29 @@ function ReasonCard({
   text: string;
 }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-5">
-      <span className="flex size-8 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-700">
+    <div className="rounded-[10px] border border-ft-site-border-light bg-white p-6">
+      <span className="flex size-9 items-center justify-center rounded-full bg-ft-site-navy text-sm font-bold text-white">
         {n}
       </span>
-      <h3 className="mt-3 text-[14px] font-semibold text-slate-900">{title}</h3>
-      <p className="mt-2 text-[13px] leading-relaxed text-slate-700">{text}</p>
+      <h3 className="mt-4 text-[16px] font-bold leading-[1.3] text-ft-site-navy">{title}</h3>
+      <p className="mt-2 text-[14px] leading-[1.55] text-ft-site-text">{text}</p>
     </div>
   );
 }
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-8 text-[12px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="border-t border-ft-site-border-light bg-white">
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-10 text-[13px] text-ft-site-text-muted sm:flex-row sm:items-center sm:justify-between">
         <p>
           © Финтабло. Интерактивные разборы для проектного бизнеса 60-1200 млн ₽.
         </p>
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-5">
           <a
             href="https://fintablo.ru"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-slate-800"
+            className="hover:text-ft-site-navy"
           >
             fintablo.ru
           </a>
@@ -343,7 +343,7 @@ function Footer() {
             href="https://help.fintablo.ru"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-slate-800"
+            className="hover:text-ft-site-navy"
           >
             help.fintablo.ru
           </a>
