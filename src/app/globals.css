@@ -113,26 +113,25 @@ body {
   color: var(--ft-text);
 }
 
-/* Landing pages opt into the site font + colors via .site-theme on root */
+/* Landing pages opt into the site font + colors via .site-theme on root.
+ * Use :where() to keep selector specificity at 0 — Tailwind utilities
+ * (text-white, bg-..., etc.) always win over these defaults. */
 .site-theme {
   font-family: var(--font-lab-grotesque), Arial, sans-serif;
   background: var(--ft-site-white, #ffffff);
   color: var(--ft-site-text);
   -webkit-font-smoothing: antialiased;
 }
-.site-theme h1,
-.site-theme h2,
-.site-theme h3,
-.site-theme h4 {
+:where(.site-theme h1, .site-theme h2, .site-theme h3, .site-theme h4) {
   color: var(--ft-site-heading);
   font-weight: 700;
   line-height: 1.2;
 }
-.site-theme a {
+:where(.site-theme a) {
   color: var(--ft-site-brand);
   text-decoration: none;
 }
-.site-theme a:hover {
+:where(.site-theme a:hover) {
   color: var(--ft-site-blue-hover);
 }
 
