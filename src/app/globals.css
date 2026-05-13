@@ -114,25 +114,33 @@ body {
 }
 
 /* Landing pages opt into the site font + colors via .site-theme on root.
- * Use :where() to keep selector specificity at 0 — Tailwind utilities
- * (text-white, bg-..., etc.) always win over these defaults. */
-.site-theme {
-  font-family: var(--font-lab-grotesque), Arial, sans-serif;
-  background: var(--ft-site-white, #ffffff);
-  color: var(--ft-site-text);
-  -webkit-font-smoothing: antialiased;
-}
-:where(.site-theme h1, .site-theme h2, .site-theme h3, .site-theme h4) {
-  color: var(--ft-site-heading);
-  font-weight: 700;
-  line-height: 1.2;
-}
-:where(.site-theme a) {
-  color: var(--ft-site-brand);
-  text-decoration: none;
-}
-:where(.site-theme a:hover) {
-  color: var(--ft-site-blue-hover);
+ * Rules live inside @layer base so Tailwind utilities (text-white, bg-…,
+ * etc., which live in the utilities layer) always win in the cascade,
+ * regardless of selector specificity. Tailwind v4 uses CSS cascade layers;
+ * any rule placed outside a layer becomes the latest layer and would
+ * override utilities — exactly the bug that caused invisible CTA text. */
+@layer base {
+  .site-theme {
+    font-family: var(--font-lab-grotesque), Arial, sans-serif;
+    background: var(--ft-site-white, #ffffff);
+    color: var(--ft-site-text);
+    -webkit-font-smoothing: antialiased;
+  }
+  .site-theme h1,
+  .site-theme h2,
+  .site-theme h3,
+  .site-theme h4 {
+    color: var(--ft-site-heading);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .site-theme a {
+    color: var(--ft-site-brand);
+    text-decoration: none;
+  }
+  .site-theme a:hover {
+    color: var(--ft-site-blue-hover);
+  }
 }
 
 @keyframes fadeIn {
