@@ -324,6 +324,111 @@ export function HandoffPage() {
           margin-top: 8px;
         }
 
+        /* How it works — two copies + SVG */
+        .branches-wrap {
+          margin: 8px 0 32px;
+          padding: 24px;
+          background: var(--bg-card);
+          border: 1px solid var(--border-soft);
+          border-radius: 14px;
+          overflow-x: auto;
+        }
+        .branches-svg {
+          width: 100%;
+          height: auto;
+          min-width: 720px;
+          display: block;
+        }
+        .flow-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 16px;
+          margin-top: 16px;
+        }
+        .flow-card {
+          padding: 24px;
+          background: var(--bg-card);
+          border: 1px solid var(--border-soft);
+          border-radius: 12px;
+        }
+        .flow-tag {
+          display: inline-block;
+          padding: 4px 12px;
+          font-size: 11px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: var(--amber);
+          background: rgba(232, 193, 84, 0.1);
+          border-radius: 999px;
+          margin: 0 0 12px;
+        }
+        .flow-card h3 {
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--text);
+          margin: 0 0 12px;
+          line-height: 1.3;
+        }
+        .flow-card p {
+          font-size: 14px;
+          color: var(--muted);
+          margin: 10px 0;
+          line-height: 1.6;
+        }
+        .flow-note {
+          padding: 12px 14px;
+          background: rgba(80, 227, 194, 0.06);
+          border-left: 2px solid var(--teal);
+          border-radius: 0 8px 8px 0;
+          font-size: 13px !important;
+          color: var(--muted) !important;
+          margin: 12px 0 0 !important;
+        }
+        .conflict-block {
+          margin-top: 20px;
+          padding: 22px 26px;
+          background: rgba(255, 107, 157, 0.05);
+          border: 1px solid rgba(255, 107, 157, 0.25);
+          border-radius: 14px;
+        }
+        .conflict-block h4 {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--pink);
+          margin: 0 0 8px;
+          text-transform: none;
+        }
+        .conflict-block p {
+          font-size: 14px;
+          color: var(--muted);
+          margin: 0;
+          line-height: 1.6;
+        }
+        .zones-note {
+          margin-top: -12px;
+          margin-bottom: 24px;
+          padding: 18px 22px;
+          background: rgba(157, 124, 255, 0.06);
+          border-left: 3px solid var(--violet);
+          border-radius: 0 10px 10px 0;
+          font-size: 14px;
+          color: var(--muted);
+          line-height: 1.6;
+        }
+        .zones-note strong {
+          color: var(--text);
+        }
+        .kbd {
+          font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+          font-size: 0.88em;
+          padding: 1px 6px;
+          border-radius: 4px;
+          background: rgba(240, 235, 224, 0.06);
+          border: 1px solid var(--border-soft);
+          color: var(--amber-soft);
+        }
+
         /* Boundaries — what Roma changes / what Ivan owns */
         .boundary-grid {
           display: grid;
@@ -586,6 +691,171 @@ export function HandoffPage() {
         </div>
       </section>
 
+      {/* How it works — two copies */}
+      <section className="h-section">
+        <p className="h-section-eyebrow">Как это работает</p>
+        <h2 className="h-section-title">Две копии проекта — твоя и моя</h2>
+        <p className="h-section-sub">
+          После «беру» у тебя своя копия проекта, у меня — своя. Они не
+          синхронизированы автоматически. Твои правки не приезжают ко мне,
+          мои не приезжают к тебе в фоновом режиме. Обновления — по команде.
+        </p>
+
+        <div className="branches-wrap">
+          <svg
+            viewBox="0 0 800 240"
+            className="branches-svg"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Схема двух веток проекта"
+          >
+            <defs>
+              <marker
+                id="arrow-amber"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="8"
+                markerHeight="8"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,0 L10,5 L0,10 z" fill="#e8c154" />
+              </marker>
+              <marker
+                id="arrow-teal"
+                viewBox="0 0 10 10"
+                refX="9"
+                refY="5"
+                markerWidth="8"
+                markerHeight="8"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,0 L10,5 L0,10 z" fill="#50e3c2" />
+              </marker>
+            </defs>
+
+            {/* Ivan branch */}
+            <text x="20" y="38" fill="#9d7cff" fontSize="14" fontWeight="700">
+              Моя копия
+            </text>
+            <text x="20" y="56" fill="#a79fb0" fontSize="12">
+              методология, движок туров
+            </text>
+            <line x1="20" y1="80" x2="780" y2="80" stroke="#9d7cff" strokeWidth="2" />
+
+            {/* Ivan commits */}
+            <circle cx="80" cy="80" r="7" fill="#9d7cff" />
+            <text x="80" y="105" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              старт
+            </text>
+            <circle cx="260" cy="80" r="7" fill="#9d7cff" />
+            <text x="260" y="105" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              новая формула H1
+            </text>
+            <circle cx="500" cy="80" r="7" fill="#9d7cff" />
+            <text x="500" y="105" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              разобран новый кейс
+            </text>
+            <circle cx="700" cy="80" r="7" fill="#9d7cff" />
+            <text x="700" y="105" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              ...
+            </text>
+
+            {/* Roma branch */}
+            <text x="20" y="200" fill="#50e3c2" fontSize="14" fontWeight="700">
+              Твоя копия
+            </text>
+            <text x="20" y="218" fill="#a79fb0" fontSize="12">
+              тексты, цифры, кейсы
+            </text>
+            <line x1="80" y1="160" x2="780" y2="160" stroke="#50e3c2" strokeWidth="2" />
+
+            {/* Branch off */}
+            <path d="M 80 80 Q 80 120 110 130 L 110 160" stroke="#50e3c2" strokeWidth="2" fill="none" />
+
+            {/* Roma commits */}
+            <circle cx="160" cy="160" r="7" fill="#50e3c2" />
+            <text x="160" y="148" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              правишь H1
+            </text>
+            <circle cx="340" cy="160" r="7" fill="#50e3c2" />
+            <text x="340" y="148" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              меняешь цифры
+            </text>
+
+            {/* Pull arrow from Ivan to Roma */}
+            <path
+              d="M 500 90 Q 480 130 440 152"
+              stroke="#e8c154"
+              strokeWidth="2"
+              strokeDasharray="6 4"
+              fill="none"
+              markerEnd="url(#arrow-amber)"
+            />
+            <text x="430" y="125" fill="#e8c154" fontSize="11" fontWeight="700">
+              Pull
+            </text>
+
+            <circle cx="440" cy="160" r="9" fill="#e8c154" stroke="#1a1428" strokeWidth="2" />
+            <text x="440" y="185" fill="#e8c154" fontSize="11" textAnchor="middle" fontWeight="700">
+              мерж
+            </text>
+
+            {/* Roma continues */}
+            <circle cx="560" cy="160" r="7" fill="#50e3c2" />
+            <text x="560" y="148" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              ещё правки
+            </text>
+            <circle cx="700" cy="160" r="7" fill="#50e3c2" />
+            <text x="700" y="148" fill="#a79fb0" fontSize="11" textAnchor="middle">
+              ...
+            </text>
+          </svg>
+        </div>
+
+        <div className="flow-grid">
+          <div className="flow-card">
+            <p className="flow-tag">Что делаешь ты</p>
+            <h3>Правишь — изменения только у тебя</h3>
+            <p>
+              Когда твой разработчик меняет текст заголовка или цифру в
+              разборе — это сохраняется в твоей копии. На твоём боевом
+              домене новый текст. На моём <span className="kbd">texterok.github.io</span>{" "}
+              — старый. Ко мне ничего не приезжает автоматически.
+            </p>
+            <p className="flow-note">
+              Если хочешь, чтобы я о твоей правке узнал — напиши в Telegram.
+              Если хочешь, чтобы правка стала частью основы для всех будущих
+              версий — тоже напиши, перенесу к себе.
+            </p>
+          </div>
+          <div className="flow-card">
+            <p className="flow-tag">Что делаю я</p>
+            <h3>Обновляю — приезжает к тебе по команде</h3>
+            <p>
+              Я разбираю новый кейс или меняю формулу H1 — это уходит в мою
+              копию. У тебя ничего не меняется автоматически. Когда захочешь
+              получить мои обновления, твой разработчик нажимает одну
+              кнопку — называется «Pull». Это 5 секунд.
+            </p>
+            <p className="flow-note">
+              Твои тексты и цифры остаются на месте — Pull их не трогает.
+              Объединение делается автоматически.
+            </p>
+          </div>
+        </div>
+
+        <div className="conflict-block">
+          <h4>А если конфликт?</h4>
+          <p>
+            Конфликт случается только если ты и я правили <strong>одну и ту
+            же строку в одном и том же файле</strong> — это бывает редко,
+            если соблюдать зоны (см. ниже). Когда такое всё-таки случается,
+            VS Code у разработчика показывает простой выбор: «оставить
+            твоё», «взять моё», «взять оба». 1 клик, конфликт закрыт.
+          </p>
+        </div>
+      </section>
+
       {/* Boundaries */}
       <section className="h-section">
         <p className="h-section-eyebrow">Зоны ответственности</p>
@@ -595,6 +865,14 @@ export function HandoffPage() {
           и цифры — это безопасно. Архитектуру и методологию обновляю я и
           присылаю тебе свежую версию.
         </p>
+        <div className="zones-note">
+          <strong>Технически можно править всё.</strong> Граница работает
+          через договорённость, не через запрет. Если ты тронешь файл из
+          моей зоны — при следующем Pull твои правки в этом файле
+          перезапишутся моей версией. Если хочешь внести что-то в основу —
+          скажи мне в Telegram, я внесу у себя, и оно прикатит к тебе со
+          следующим обновлением как новая стандартная часть.
+        </div>
         <div className="boundary-grid">
           <div className="boundary-card zone-roma">
             <div className="boundary-head">
