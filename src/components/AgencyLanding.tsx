@@ -66,7 +66,7 @@ function Hero() {
     <section className="border-b border-ft-site-border-light bg-ft-site-tint">
       <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
+          <div className="order-2 lg:order-1">
             <p className="text-[12px] font-semibold uppercase tracking-wider text-ft-site-brand">
               Для проектных агентств 60-1200 млн ₽ с авансовой моделью
             </p>
@@ -107,7 +107,9 @@ function Hero() {
             </p>
           </div>
 
-          <HeroVisual />
+          <div className="order-1 lg:order-2">
+            <HeroVisual />
+          </div>
         </div>
       </div>
     </section>

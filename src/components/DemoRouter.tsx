@@ -19,7 +19,7 @@ type TourCard = {
 const TOURS: TourCard[] = [
   {
     scenario: "stroyka",
-    href: "/",
+    href: "/tour",
     badge: "Стройка · СМР · ПИР",
     title: "Разбор строительной компании",
     jtbd:
