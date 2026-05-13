@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Accessibility Agents — installer metadata (the agents/skills themselves are committed)
+.a11y-agent-team-install-backup.json
+.a11y-agent-team-install-summary.json
