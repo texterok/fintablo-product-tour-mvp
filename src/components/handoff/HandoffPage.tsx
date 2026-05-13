@@ -924,7 +924,7 @@ export function HandoffPage() {
             Если у тебя есть человек, который верстает лендинги — отдай ему
             одну ссылку на инструкцию:{" "}
             <a
-              href="https://github.com/texterok/fintablo-product-tour-mvp/blob/main/mvp/ROMA-DEV-README.md"
+              href="https://github.com/texterok/fintablo-product-tour-mvp/blob/main/ROMA-DEV-README.md"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "var(--amber)" }}
