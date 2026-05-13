@@ -36,6 +36,36 @@ If a page MUST not have the counter (rare, e.g. legal disclaimer with no JS):
 Counter rule applies to ALL routes — landings, routers, tour pages, 404,
 not-found. Treat it like CSS reset: assumed present, never optional.
 
+## Project rule: custom CSS defaults always in `@layer base`
+
+Tailwind v4 uses **CSS cascade layers**. Tailwind utilities live in the
+`utilities` layer. Any custom rule placed **outside any `@layer`** ends up
+in an unnamed final layer that wins over every Tailwind utility, regardless
+of selector specificity. This pattern has shipped two invisible-CTA bugs
+already (white text on brand-blue pill, overridden by `.site-theme a {color:
+var(--ft-site-brand)}`).
+
+Rule: every custom CSS rule in [src/app/globals.css](src/app/globals.css)
+that defines **defaults** (heading color, link color, body styling for a
+theme wrapper, etc.) **MUST** be wrapped in `@layer base { … }`.
+
+```css
+/* Wrong — wins over text-white utility, breaks CTAs */
+.site-theme a { color: var(--ft-site-brand); }
+
+/* Right — utilities can still override */
+@layer base {
+  .site-theme a { color: var(--ft-site-brand); }
+}
+```
+
+`:where()` for zero specificity is **not enough** — layer order wins
+over specificity in Tailwind v4. Always use `@layer base` for defaults.
+
+Exception: animation keyframes and one-off utility classes (e.g.
+`.fade-in`) can stay outside layers if they don't conflict with Tailwind
+utilities.
+
 <!-- a11y-agent-team: start -->
 # Accessibility-First Development
 
