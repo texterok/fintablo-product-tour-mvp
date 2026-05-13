@@ -83,9 +83,12 @@ function checkManifestDelta(path) {
     });
     if (upstreamContent === localContent) return null;
 
-    // Normalize by replacing the enabledForRoma value, then compare.
+    // Normalize by replacing every `enabledForRoma: true|false` occurrence
+    // (handles both code and any comment placeholders that happen to match).
+    // Then compare normalized content. If still different — something other
+    // than the flag was modified.
     const normalize = (s) =>
-      s.replace(/enabledForRoma:\s*(true|false)/, "enabledForRoma: <ROMA>");
+      s.replace(/enabledForRoma:\s*(true|false)/g, "enabledForRoma: <ROMA>");
     if (normalize(upstreamContent) === normalize(localContent)) return null;
 
     return `${path}: manifest modified beyond the enabledForRoma flag. Other manifest fields are Ivan's zone — talk to Ivan instead of editing here.`;
