@@ -1,0 +1,21 @@
+# CODEOWNERS — Fintablo Product Tour MVP
+#
+# Auto-assigns review on pull requests.
+# IMPORTANT: this file documents intent. Real protection is done by
+# scripts/check-roma-boundary.mjs (boundary CI) + branch protection rules.
+#
+# On Ivan's repo (texterok/fintablo-product-tour-mvp): @texterok reviews everything.
+# On Roma's fork (fintablo/...): replace @texterok with @<roma-dev-github-handle>.
+
+# Default catch-all — Ivan
+*                                       @texterok
+
+# Roma-editable zone (override defaults)
+/src/tours/*/data.ts                    @texterok @roma-dev
+/src/tours/*/landing-copy.ts            @texterok @roma-dev
+/src/content/roma/                      @roma-dev
+/public/roma/                           @roma-dev
+/ROMA-DEV-README.md                     @roma-dev
+
+# Manifest is shared — Roma flips the enabledForRoma flag, Ivan owns the rest.
+/src/tours/*/manifest.ts                @texterok @roma-dev

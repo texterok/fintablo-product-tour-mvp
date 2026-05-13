@@ -1,0 +1,54 @@
+name: Roma Boundary Check
+
+# Runs on Roma's fork — verifies no files were edited outside Roma's zone.
+# On the upstream repo (texterok/...) this is effectively a no-op because
+# upstream/main resolves to the same commit as HEAD.
+#
+# To set up on the fork:
+#   1. Fork this repo.
+#   2. In the fork, run: gh repo edit --enable-actions
+#   3. Locally: git remote add upstream https://github.com/texterok/fintablo-product-tour-mvp.git
+#   4. Push: workflow auto-fetches upstream + runs check.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # need history to diff against upstream
+
+      - name: Add upstream remote (if env var set)
+        env:
+          UPSTREAM_URL: ${{ vars.UPSTREAM_URL }}
+        run: |
+          if [ -n "$UPSTREAM_URL" ]; then
+            git remote add upstream "$UPSTREAM_URL" || true
+            git fetch upstream main:upstream/main || git fetch upstream main
+          else
+            echo "UPSTREAM_URL not set — skipping fetch. Set as repo variable on fork."
+          fi
+
+      - name: Run boundary check
+        env:
+          UPSTREAM_REF: ${{ vars.UPSTREAM_URL && 'upstream/main' || 'origin/main' }}
+        run: |
+          cd mvp 2>/dev/null || true  # repo root may or may not be mvp/
+          node scripts/check-roma-boundary.mjs || (
+            echo ""
+            echo "=========================================================="
+            echo "Roma boundary check FAILED — see message above."
+            echo "Fix: revert files in Ivan's zone, or ask Ivan to upstream."
+            echo "=========================================================="
+            exit 1
+          )
